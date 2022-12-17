@@ -88,20 +88,20 @@ public class CourseDao extends DbContext {
         return list;
     }
 
-    public List<Blog> getAllBlog() {
-        List<Blog> list = new ArrayList<>();
-        String sql = "SELECT * FROM swp.blog";
-        try {
-            con = getConnection();
-            st = con.prepareStatement(sql);
-            rs = st.executeQuery();
-            while (rs.next()) {
-                list.add(new Blog(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getDate(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13)));
-            }
-        } catch (Exception e) {
-        }
-        return list;
-    }
+//    public List<Blog> getAllBlog() {
+//        List<Blog> list = new ArrayList<>();
+//        String sql = "SELECT * FROM swp.blog";
+//        try {
+//            con = getConnection();
+//            st = con.prepareStatement(sql);
+//            rs = st.executeQuery();
+//            while (rs.next()) {
+//                list.add(new Blog(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getDate(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13)));
+//            }
+//        } catch (Exception e) {
+//        }
+//        return list;
+//    }
     public List<Slider> getAllSlider() {
         List<Slider> list = new ArrayList<>();
         String sql = "SELECT * FROM swp.slider";
@@ -130,39 +130,38 @@ public class CourseDao extends DbContext {
         return 0;
     }
     
-    public List<Blog> pagingBlog(int index) {
+    
+
+//    public List<Blog> getBlogPublish() {
+//        List<Blog> list = new ArrayList<>();
+//        String sql = "select a.blogid, a.title, a.content, a.comment, a.user_id, a.time, a.excerpt, a.img, a.status, a.category_id, a.tag_id, a.is_Display, b.name, b.avatar from blog a INNER JOIN user b on a.user_id = b.user_id where a.is_Display = '1'";
+//        try {
+//            con = getConnection();
+//            st = con.prepareStatement(sql);
+//            rs = st.executeQuery();
+//            while (rs.next()) {
+//                list.add(new Blog(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getDate(6), rs.getString(7), rs.getString(8), rs.getInt(9), rs.getInt(10), rs.getInt(11), rs.getInt(14), rs.getString(12), rs.getString(13)));
+//           }
+//        } catch (Exception e) {
+//        }
+//        return list;
+//    }
+
+    public List<Blog> getBlog() {
         List<Blog> list = new ArrayList<>();
-        String sql = "SELECT a.blogid, a.title, a.content, a.comment , a.user_id, a.time, a.excerpt, a.img, a.status, a.category, a.tags, b.name, b.avatar FROM swp.blog a INNER JOIN swp.user b on a.user_id = b.user_id  Where a.status = 'Publish' order by blogid limit 5 OFFSET ?";
+        String sql = "select a.blogid, a.title, a.content, a.comment, a.user_id, a.time, a.excerpt, a.img, a.status, a.category_id, a.tag_id, a.is_Display, b.name, b.avatar from blog a INNER JOIN user b on a.user_id = b.user_id where a.is_Display = '1'";
         try {
             con = getConnection();
             st = con.prepareStatement(sql);
-            st.setInt(1, (index-1)*5);
             rs = st.executeQuery();
             while (rs.next()) {
-                list.add(new Blog(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getDate(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13)));
+                list.add(new Blog(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getDate(6), rs.getString(7), rs.getString(8), rs.getInt(9), rs.getInt(10), rs.getInt(11), rs.getInt(12), rs.getString(13), rs.getString(14)));
             }
         } catch (Exception e) {
         }
         return list;
     }
-
-    public List<Blog> getBlogPublish() {
-        List<Blog> list = new ArrayList<>();
-        String sql = "SELECT a.blogid, a.title, a.content, a.comment , a.user_id, a.time, a.excerpt, a.img, a.status, a.category, a.tags, b.name, b.avatar\n"
-                + " FROM swp.blog a INNER JOIN swp.user b on a.user_id = b.user_id \n"
-                + " Where a.status = 'Publish'";
-        try {
-            con = getConnection();
-            st = con.prepareStatement(sql);
-            rs = st.executeQuery();
-            while (rs.next()) {
-                list.add(new Blog(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getDate(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12), rs.getString(13)));
-           }
-        } catch (Exception e) {
-        }
-        return list;
-    }
-
+    
     public List<Course> getCourseIT() {
         List<Course> list = new ArrayList<>();
         String sql = "SELECT * FROM swp.course WHERE course_name LIKE '%IT%';";
@@ -241,36 +240,7 @@ public class CourseDao extends DbContext {
         return list;
     }
 
-//    public List<Course> getCourse(CourseRequestParam parameter) {
-//        List<Course> result = new ArrayList<>();
-//        String sql = "select * from (\n"
-//                + "SELECT course.course_id ,course.course_name,course.price,course.description,\n"
-//                + "count(course_chapter.course_id) as chapter, course.disabled FROM swp.course\n"
-//                + "LEFT JOIN course_chapter ON course.course_id = course_chapter.course_id\n"
-//                + "group by course.course_id ) temp\n"
-//                + "where temp.course_name like ?  and disabled = 1\n"
-//                + "order by " + parameter.orderBy + " " + parameter.orderType + "\n"
-//                + "limit " + (parameter.index * parameter.pageSize) + "," + parameter.pageSize;
-//        try {
-//            con = getConnection();
-//            st = con.prepareStatement(sql);
-//            st.setString(1, "%" + parameter.keyword + "%");
-//            System.out.println(sql);
-//            rs = st.executeQuery();
-//            while (rs.next()) {
-//                Course course = new Course();
-//                course.setCourse_Id(rs.getInt("course_id"));
-//                course.setCourse_Name(rs.getString("course_name"));
-//                course.setPrice(roundFloat(rs.getFloat("price")));
-//                course.setDes(rs.getString("description"));
-//                course.setNumberOfChapter(rs.getInt("chapter"));
-//                result.add(course);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return result;
-//    }
+
 
     private String roundFloat(float a) {
 
@@ -369,7 +339,7 @@ public class CourseDao extends DbContext {
 
     public static void main(String[] args) {
         CourseDao dao = new CourseDao();
-        List<Blog> list = dao.getBlogPublish();
+        List<Blog> list = dao.getBlog();
         for (Blog o : list) {
             System.out.println(o);
         }

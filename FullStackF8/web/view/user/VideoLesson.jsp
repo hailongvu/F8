@@ -53,10 +53,10 @@
 
                                 <div class="modal-header">
                                     <div class="row">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-5">
                                             <h4 style="font-weight: bold; color: orangered" class="modal-title" id="myModalLabel2">Note của tôi</h4>
                                         </div>
-                                        <div class="col-sm-5">
+<!--                                        <div class="col-sm-5">
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                                     Sắp xếp theo chương
@@ -66,11 +66,11 @@
                                                     <li><a class="dropdown-item" href="#">Trong tất cả các chương</a></li>
                                                 </ul>
                                             </div>
-                                        </div>
-                                        <div class="col-sm-3">
+                                        </div>-->
+                                        <div class="col-sm-6">
                                             <div class="dropdown">
                                                 <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    Mới nhất
+                                                    Sắp xếp theo thời gian
                                                 </button>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                                                     <li><a class="dropdown-item" href="#">Mới nhất</a></li>
@@ -78,9 +78,9 @@
                                                 </ul>
                                             </div>
                                         </div>
-<!--                                        <div class="col-sm-1">
+                                        <div class="col-sm-1">
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        </div>-->
+                                        </div>
                                     </div>
                                 </div>
 
@@ -159,22 +159,12 @@
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-sm-1">Fanpage:</div>
+                            <c:forEach items="${listSo}" var="o">
+                            <div class="col-sm-1">${o.name}</div>
                             <div class="col-sm-11">
-                                <a target="0" href="https://www.facebook.com/f8vnofficial" style="color: orangered">https://www.facebook.com/f8vnofficial</a>
+                                <a target="0" href="${o.link}" style="color: orangered">${o.link}</a>
                             </div>
-                            <div class="col-sm-1">Group</div>
-                            <div class="col-sm-11">
-                                <a target="0" href="https://www.facebook.com/groups/649972919142215" style="color: orangered">https://www.facebook.com/groups/649972919142215</a>
-                            </div>
-                            <div class="col-sm-1">Youtube</div>
-                            <div class="col-sm-11">
-                                <a target="0" href="https://www.youtube.com/F8VNOfficial" style="color: orangered">https://www.youtube.com/F8VNOfficial</a>
-                            </div>
-                            <div class="col-sm-1">Long Vu:</div>
-                            <div class="col-sm-11">
-                                <a target="0" href="https://www.facebook.com/hailongvu111" style="color: orangered">https://www.facebook.com/hailongvu111</a>
-                            </div>
+                           </c:forEach>
                         </div>
                     </div>
                 </div>

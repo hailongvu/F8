@@ -8,6 +8,7 @@ package controller;
 import dao.LearnDao;
 import entity.Chapter;
 import entity.Lesson;
+import entity.LinkSocial;
 import entity.Note;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -45,6 +46,9 @@ public class VideoLessonController extends HttpServlet {
         
         List<Note> listNote = dao.getNoteList();       
         request.setAttribute("listNote", listNote);
+        
+        List<LinkSocial> listSo = dao.getLinkSocial();       
+        request.setAttribute("listSo", listSo);
         
         request.getRequestDispatcher("view/user/VideoLesson.jsp").forward(request, response);
     }

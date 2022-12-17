@@ -45,7 +45,7 @@ public class HomeController extends HttpServlet {
         List<Course> listFree = dao.getCourseFree();       
         request.setAttribute("listF", listFree);
         
-        List<Blog> listB = dao.getBlogPublish();       
+        List<Blog> listB = dao.getBlog();       
         request.setAttribute("listBlog", listB);
         
         List<Slider> sliderG = dao.getAllSlider();       

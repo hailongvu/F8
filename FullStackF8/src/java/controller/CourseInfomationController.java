@@ -7,6 +7,7 @@ package controller;
 
 import dao.LearnDao;
 import entity.Chapter;
+import entity.CourseChapterLesson;
 import entity.CourseTarget;
 import entity.Lesson;
 import java.io.IOException;
@@ -56,6 +57,9 @@ public class CourseInfomationController extends HttpServlet {
         
         List<Lesson> listLes = dao.getLessonByChapterId(course_Id);
         request.setAttribute("listLes", listLes);
+        
+        List<CourseChapterLesson> listCo = dao.getCoLeCh(course_Id);
+        request.setAttribute("listCo", listCo);
         
         
         request.getRequestDispatcher("view/user/course_information.jsp").forward(request, response);

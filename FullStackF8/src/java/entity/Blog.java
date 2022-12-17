@@ -22,16 +22,18 @@ public class Blog {
     private Date time;
     private String excerpt;
     private String image;
-    private String status;
-    private String category;
-    private String tag;
+    private int status;
+    private int category_id;
+    private int tag_id;
+    private int is_display;
     private String userName;
     private String userAvatar;
+    
 
     public Blog() {
     }
 
-    public Blog(int id, String title, String content, String comment, int userId, Date time, String excerpt, String image, String status, String category, String tag, String userName, String userAvatar) {
+    public Blog(int id, String title, String content, String comment, int userId, Date time, String excerpt, String image, int status, int category_id, int tag_id, int is_display, String userName, String userAvatar) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -41,10 +43,11 @@ public class Blog {
         this.excerpt = excerpt;
         this.image = image;
         this.status = status;
-        this.category = category;
-        this.tag = tag;
+        this.category_id = category_id;
+        this.tag_id = tag_id;
         this.userName = userName;
         this.userAvatar = userAvatar;
+        this.is_display = is_display;
     }
 
     public int getId() {
@@ -111,28 +114,28 @@ public class Blog {
         this.image = image;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
-    public String getCategory() {
-        return category;
+    public int getCategory_id() {
+        return category_id;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategory_id(int category_id) {
+        this.category_id = category_id;
     }
 
-    public String getTag() {
-        return tag;
+    public int getTag_id() {
+        return tag_id;
     }
 
-    public void setTag(String tag) {
-        this.tag = tag;
+    public void setTag_id(int tag_id) {
+        this.tag_id = tag_id;
     }
 
     public String getUserName() {
@@ -151,10 +154,17 @@ public class Blog {
         this.userAvatar = userAvatar;
     }
 
-    @Override
-    public String toString() {
-        return "Blog{" + "id=" + id + ", title=" + title + ", content=" + content + ", comment=" + comment + ", userId=" + userId + ", time=" + time + ", excerpt=" + excerpt + ", image=" + image + ", status=" + status + ", category=" + category + ", tag=" + tag + ", userName=" + userName + ", userAvatar=" + userAvatar + '}';
+    public int getIs_display() {
+        return is_display;
     }
 
-    
+    public void setIs_display(int is_display) {
+        this.is_display = is_display;
+    }
+
+    @Override
+    public String toString() {
+        return "Blog{" + "id=" + id + ", title=" + title + ", content=" + content + ", comment=" + comment + ", userId=" + userId + ", time=" + time + ", excerpt=" + excerpt + ", image=" + image + ", status=" + status + ", category_id=" + category_id + ", tag_id=" + tag_id + ", userName=" + userName + ", userAvatar=" + userAvatar + ", is_display=" + is_display + '}';
+    }
+
 }

@@ -41,7 +41,7 @@ public class BlogController extends HttpServlet {
                 
         
         CourseDao dao = new CourseDao();
-        List<Blog> listB = dao.getBlogPublish();       
+        List<Blog> listB = dao.getBlog();       
         request.setAttribute("listBlogPu", listB);
         
         int count = dao.getTatalBlog();

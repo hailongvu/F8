@@ -7,8 +7,10 @@ package dao;
 
 import Context.DbContext;
 import entity.Chapter;
+import entity.CourseChapterLesson;
 import entity.CourseTarget;
 import entity.Lesson;
+import entity.LinkSocial;
 import entity.Note;
 import entity.Slider;
 import java.sql.Connection;
@@ -99,6 +101,20 @@ public class LearnDao extends DbContext {
         }
         return list;
     }
+    public List<LinkSocial> getLinkSocial() {
+        List<LinkSocial> list = new ArrayList<>();
+        String sql = "Select * from link_social";
+        try {
+            con = getConnection();
+            st = con.prepareStatement(sql);
+            rs = st.executeQuery();
+            while (rs.next()) {
+                list.add(new LinkSocial(rs.getInt(1), rs.getString(2), rs.getString(3)));
+            }
+        } catch (Exception e) {
+        }
+        return list;
+    }
 
     public void deleteNote(String lesson_note_id) {
         String sql = "delete from lesson_note where lesson_note_id = ?";
@@ -141,6 +157,26 @@ public class LearnDao extends DbContext {
             rs = st.executeQuery();
             while (rs.next()) {
                 list.add(new Lesson(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getInt(6), rs.getString(7)));
+            }
+            return list;
+        } catch (Exception e) {
+        }
+
+        return null;
+
+    }
+    public List<CourseChapterLesson> getCoLeCh(int course_Id) {
+        List<CourseChapterLesson> list = new ArrayList<>();
+        String sql = "SELECT b.course_Id, e.course_name, e.description, e.image, c.lesson_id,a.content, a.chapter_id, d.title, d.link_video "
+                + "FROM chapter a join course_chapter b on a.chapter_id = b.chapter_id join chapter_lesson c on c.chapter_id = b.chapter_id join lesson d on d.lesson_id = c.lesson_id join course e on e.course_id = b.course_id "
+                + "where b.course_id = ?";
+        try {
+            con = getConnection();
+            st = con.prepareStatement(sql);
+            st.setInt(1, course_Id);
+            rs = st.executeQuery();
+            while (rs.next()) {
+                list.add(new CourseChapterLesson(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getInt(5), rs.getString(6), rs.getInt(7), rs.getString(8), rs.getString(9)));
             }
             return list;
         } catch (Exception e) {
@@ -199,8 +235,10 @@ public class LearnDao extends DbContext {
 //    }
     public static void main(String[] args) {
         LearnDao dao = new LearnDao();
-        Note s = dao.getNoteById("1");
-        System.out.println(s);
+        List<CourseChapterLesson> list = dao.getCoLeCh(1);
+        for (CourseChapterLesson o : list) {
+            System.out.println(o);
+        }
         
     }
 }

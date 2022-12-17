@@ -41,59 +41,34 @@
                         </div>
                     </c:forEach>
                     <h3 style="margin-top: 30px; font-size: 27px;">Nội dung khóa học</h3>
-                    <%
-                        LearnDao dao = new LearnDao();
-                    %>
-                    <%
-                        List<Chapter> listChap = dao.getChapterByCourseId(Integer.parseInt(request.getParameter("course_Id")));
-                    %>
-                    <%
-                        for (Chapter elemC : listChap) {
-                            String content = elemC.getContent();
-                            int chapterId = elemC.getChapter_id();
-                    %>
-                    <li class='sub-menu'>
-                        <a href='#'>
-                            <div class='fa fa-question-circle'></div>
-                            <p style="font-size: 20px">${o.content} ${o.chapter_id}
-                                <%=content%></p>
-
-                            <div class='fa fa-caret-down right'></div>
-                        </a>
-
-                        <%                                List<Lesson> listLes = dao.getLessonByChapterId(chapterId);
-                        %>
-                        <ul>
-                            <%
-                                for (Lesson elem : listLes) {
-                                    String title = elem.getTitle();
-
-                            %>
-                            <li>
-                                <a style="font-size: 15px" href='#settings'>
-                                    <%= title%>
-                                </a>
-                            </li>
-                            <%                                    }
-                            %>
-                        </ul>
-
-                    </li>
-                    <% }
-
-                    %>
-
-                    <%--</c:forEach>--%>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true" style="font-size: 20px">Chapter</li>
+                                    <c:forEach items="${listCo}" var="o">
+                                    <li class="list-group-item" style="font-size: 16px">${o.content}</li>
+                                    </c:forEach>
+                            </ul>
+                        </div>
+                        <div class="col-sm-8">
+                            <ul class="list-group">
+                                <li class="list-group-item active" aria-current="true" style="font-size: 20px">Lesson</li>
+                                    <c:forEach items="${listCo}" var="o">
+                                    <li class="list-group-item" style="font-size: 16px">${o.title}</li>
+                                    </c:forEach>
+                            </ul>
+                        </div>
+                    </div>
+                    <h3 style="margin-top: 30px; font-size: 27px;">Yêu cầu</h3>
+                    <c:forEach items="${detail}" var="de">
+                        <div class="row">
+                            
+                            <div style="font-size: 15px;" class="col-6">${de.request}</div>
+                        </div>
+                    </c:forEach>
                 </div>
 
-                <c:forEach items="${dao.getLessonByChapterId(o.chapter_id)}"  var="o">
 
-                    <li>
-                        <a href='#settings'>
-                            ${o.title}
-                        </a>
-                    </li>
-                </c:forEach>
                 <div class="col-6 col-sm-4"> 
                     <a class="popup-youtube" 
                        href="https://drive.google.com/file/d/1lLjgF6e4qcKzPSwMQgeE-PZG9IRfOmNo/preview">

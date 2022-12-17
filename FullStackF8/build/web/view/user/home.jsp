@@ -74,7 +74,7 @@
                         </div>
                     </c:forEach>
                 </div>
-                <div class="row">
+                <div class="row" style="margin-top: 200px">
                     <h2>List Course Premium: </h2>
                     <c:forEach items="${listC}" var="o">
                         <div class="col-sm-3" style="margin-top: 30px">

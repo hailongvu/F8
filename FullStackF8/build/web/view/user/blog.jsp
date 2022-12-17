@@ -53,7 +53,7 @@
                                             <div class="row">
                                                 <div class="col-md-4">                                           
                                                     <form action="#">
-                                                        <button style="padding: 5px 20px;border-radius: 20px;-moz-border-radius: 20px;-webkit-border-radius: 20px; border: none;background: #dbdbdb; color: #000; cursor: pointer;">${o.tag}</button>
+                                                        <button style="padding: 5px 20px;border-radius: 20px;-moz-border-radius: 20px;-webkit-border-radius: 20px; border: none;background: #dbdbdb; color: #000; cursor: pointer;">${o.tag_id}</button>
                                                     </form>
                                                 </div>
                                                 <div class="col-md-4">
