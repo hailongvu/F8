@@ -28,16 +28,17 @@ public class loginDao extends DbContext {
     public User getUser(String email, String password) {
         User user = null;
         try {
-            String sql = "SELECT * FROM user where email = ? and password = ?;";
+            String sql = "SELECT * FROM user where email = ? and password = ?";
             con = getConnection();
             st = con.prepareStatement(sql);
             st.setString(1, email);
             st.setString(2, password);
             rs = st.executeQuery();
             while (rs.next()) {
-                return new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
-                        rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getString(10), rs.getString(11), rs.getString(12));
-            }
+                user = new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5),
+                        rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9), rs.getInt(10), rs.getBoolean(11), rs.getInt(12));
+                return  user;
+            };
         } catch (Exception ex) {
             try {
                 throw ex;

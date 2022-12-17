@@ -19,14 +19,14 @@ public class User {
     private String company;
     private String avatar;
     private String password;
-    private String role;
-    private String gender;
-    private String status;
+    private int role;
+    private boolean gender;
+    private int status;
 
     public User() {
     }
 
-    public User(int user_id, String name, String email, String phone, String address, String position, String company, String avatar, String password, String role, String gender, String status) {
+    public User(int user_id, String name, String email, String phone, String address, String position, String company, String avatar, String password, int role, boolean gender, int status) {
         this.user_id = user_id;
         this.name = name;
         this.email = email;
@@ -113,27 +113,27 @@ public class User {
         this.password = password;
     }
 
-    public String getRole() {
+    public int getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(int role) {
         this.role = role;
     }
 
-    public String getGender() {
+    public boolean isGender() {
         return gender;
     }
 
-    public void setGender(String gender) {
+    public void setGender(boolean gender) {
         this.gender = gender;
     }
 
-    public String getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 
@@ -141,5 +141,11 @@ public class User {
     public String toString() {
         return "User{" + "user_id=" + user_id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", address=" + address + ", position=" + position + ", company=" + company + ", avatar=" + avatar + ", password=" + password + ", role=" + role + ", gender=" + gender + ", status=" + status + '}';
     }
+
+    
+
+    
+
+    
     
 }

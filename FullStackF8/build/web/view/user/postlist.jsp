@@ -4,99 +4,71 @@
     Author     : ADMIN
 --%>
 
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-<script src="../../js/postlist.js" type="text/javascript"></script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Data Tables</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>-->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 
-<div class="container">
-	<div class="row">
-		
-        
-        <div class="col-md-12">
-        <h2>Post list</h2>
-        <div class="table-responsive">
-
-                
-              <table id="mytable" class="table table-bordred table-striped">
-                   
-                   <thead>
-
-                   <th>ID</th>
-                    <th>Title</th>
-                     <th>Category</th>
-                     <th>Author</th>
-                     <th>Status</th>
-                      <th>Edit</th>
-                      
-                       <th>Delete</th>
-                   </thead>
-    <tbody>
-    
-    <tr>
-
-    <td>Mohsin</td>
-    <td>Irshad</td>
-    <td>CB 106/107 Street # 11 Wah Cantt Islamabad Pakistan</td>
-    <td>isometric.mohsin@gmail.com</td>
-    <td>+923335586757</td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-    <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
-    </tr>
-    
- 
-   
-    
-    </tbody>
-        
-</table>
-
-<div class="clearfix"></div>
-<ul class="pagination pull-right">
-  <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
-  <li class="active"><a href="#">1</a></li>
-  <li><a href="#">2</a></li>
-  <li><a href="#">3</a></li>
-  <li><a href="#">4</a></li>
-  <li><a href="#">5</a></li>
-  <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
-</ul>
-                
-            </div>
-            
+        <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js" ></script>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Post List</h2>
+            <table class="table table-fluid" id="myTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Author</th>
+                        <th>Status</th>
+                        <th><button>Add</button></th>
+                    </tr>
+                </thead>    
+                <tbody>
+                    <tr><td>1</td><td>Socalmedia</td><td>Facebook</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button style="margin-left: 10px">Delete</button></td></tr>
+                    <tr><td>2</td><td>InterNet</td><td>Insta</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button style="margin-left: 10px">Delete</button></td></tr>
+                    <tr><td>3</td><td>Cartoon</td><td>Twitter</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>4</td><td>Cinema</td><td>Telegram</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>5</td><td>sient</td><td>Facebook</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>6</td><td>Coach</td><td>Telegram</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>7</td><td>Kafy</td><td>Insta</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>8</td><td>Socalmedia</td><td>Facebook</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>9</td><td>Socalmedia</td><td>Facebook</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>10</td><td>Socalmedia</td><td>Telegram</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>11</td><td>Socalmedia</td><td>Facebook</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>12</td><td>Socalmedia</td><td>Twitter</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>13</td><td>Socalmedia</td><td>Telegram</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>14</td><td>Socalmedia</td><td>Insta</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>15</td><td>Socalmedia</td><td>Facebook</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>16</td><td>Socalmedia</td><td>Facebook</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>17</td><td>Socalmedia</td><td>Telegram</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>18</td><td>Socalmedia</td><td>Facebook</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>19</td><td>Socalmedia</td><td>Twitter</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>20</td><td>Socalmedia</td><td>Telegram</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>21</td><td>Socalmedia</td><td>Insta</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button>Delete</button></td></tr>
+                    <tr><td>22</td><td>InterNet</td><td>Insta</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button style="margin-left: 10px">Delete</button></td></tr>
+                    <tr><td>23</td><td>InterNet</td><td>Insta</td><td>Taylor Swift</td><td>Draft</td><td><button>Edit</button><button style="margin-left: 10px">Delete</button></td></tr>
+                </tbody>
+            </table>
         </div>
-	</div>
-</div>
-<button id="btn-add" class="btn btn-primary float-right ml-1" type="button" style="margin-left: 368px">
-    <i class="fa fa-plus"></i>Add new post
-</button>
-
-
-    
-    
-    
-    <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
-      <div class="modal-dialog">
-    <div class="modal-content">
-          <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <h4 class="modal-title custom_align" id="Heading">Delete this entry</h4>
-      </div>
-          <div class="modal-body">
-       
-       <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span> Are you sure you want to delete this Record?</div>
-       
-      </div>
-        <div class="modal-footer ">
-        <button type="button" class="btn btn-success" ><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
-      </div>
-        </div>
-    <!-- /.modal-content --> 
-  </div>
-      <!-- /.modal-dialog --> 
-    </div>
+        <script>
+            $(document).ready(function () {
+                $('#myTable').DataTable();
+            });
+        </script>
+    </body>
+</html>

@@ -3,12 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/control/LoginController.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/Context/DbContext.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/entity/Test.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/entity/User.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/control/HomeController.java</file>
-            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/dao/loginDao.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/web/js/scrips.js</file>
+            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/controller/NoteController.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/entity/Lesson.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/web/view/user/home.jsp</file>
+            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/controller/UpdateNoteController.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/web/view/user/VideoLesson.jsp</file>
+            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/controller/VideoLessonController.java</file>
+            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/web/js/popup.js</file>
+            <file>file:/C:/Users/ADMIN/Documents/GitHub/g3/FullStackF8/src/java/dao/LearnDao.java</file>
         </group>
     </open-files>
 </project-private>
